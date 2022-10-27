@@ -1,0 +1,58 @@
+@model List<GetCausesDto>
+<!-- Header Close -->
+<section class="page-title bg-1">
+   <div class="container">
+      <div class="columns">
+         <div class="column is-12">
+            <div class="block has-text-centered">
+               <span class="text-white">What we do</span>
+               <h1 class="is-capitalize text-lg">Our Recent Causes</h1>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+
+
+ <section class="section causes">
+	<div class="container">
+		<div class="columns is-multiline is-justify-content-center">
+		
+		@foreach (var item in Model)
+		{
+			<div class="column is-4-desktop is-6-tablet">
+				<div class="cause-item">
+					<img src="http://188.212.125.226:8083/images/posts/47d37370-d770-47ea-93c3-fc959cfa255a.jpg" class=" w-100" alt="...">
+
+					<div class="card-body">
+						<ul class="list-inline border-bottom border-top py-3 mb-4">
+						<li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Goal:	$<span>@item.Goal</span></li>
+						<li class="list-inline-item"><i class="icofont-check text-color mr-2"></i>Raised: $<span>@item.Raised</span></li>
+						</ul>
+						<p class="card-text mb-5">@item.Explanation</p>
+						<a href="donation.html" class="btn btn-main is-rounded">Donate Now</a>
+					</div>
+				</div>
+			</div>
+        }
+		
+		</div>
+	</div>
+</section>
+
+<!-- Section About End -->
+<div class="cta-block section">
+	<div class="container">
+		<div class="columns is-justify-content-center ">
+			<div class="column is-7-desktop is-12-tablet">
+				<div class="cta-content has-text-centered">
+					<i class="icofont-diamond text-lg text-color"></i>
+					<h2 class="text-white text-lg mb-6 mt-4">We can’t help everyone, but everyone can help someone</h2>
+					<a href="donation.html" class="btn btn-main is-rounded">Make a donation</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div> 
+
+<!-- Section About Start -->

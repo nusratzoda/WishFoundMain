@@ -1,0 +1,25 @@
+@model Domain.Dtos.AddCausesDto
+<form method="post" asp-action="Add">
+    <div class="form-group">
+        <input type="hidden" asp-for="Id">
+        <label >Causes header</label>
+        <input type="text" asp-for="Header" class="form-control">
+        <span class="text-danger" asp-validation-for="Header"></span>
+        <label >Causes goal</label>
+        <input type="text" asp-for="Goal" class="form-control">
+        <span class="text-danger" asp-validation-for="Goal"></span>
+
+         <label >Causes raised</label>
+        <input type="text" asp-for="Raised" class="form-control">
+        <span class="text-danger" asp-validation-for="Raised"></span>
+
+           <label >Causes explanation</label>
+        <input type="text" asp-for="Explanation" class="form-control">
+        <span class="text-danger" asp-validation-for="Explanation"></span>
+
+             <label >Causes image</label>
+        <input type="text" asp-for="Image" class="form-control">
+        <span class="text-danger" asp-validation-for="Image"></span>
+    
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>

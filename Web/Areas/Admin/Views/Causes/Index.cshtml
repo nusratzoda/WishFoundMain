@@ -1,0 +1,32 @@
+@model List<Domain.Dtos.GetCausesDto>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Header</th>
+            <th scope="col">Goal</th>
+            <th scope="col">Raised</th>
+            <th scope="col">Explanation</th>
+            <th scope="col">Image</th>
+            <th scope="col"></th>
+
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var causes in Model)
+        {
+            <tr>
+                <th scope="row">@causes.Id</th>
+                <td>@causes.Header</td>
+                <td>@causes.Explanation</td>
+                <td>@causes.Goal</td>
+                <td>@causes.Raised</td>
+                <td>@causes.Image</td>
+                <td> <a href="/admin/causes/update/@causes.Id">Update</a> | <a
+                    href="/admin/causes/delete/@causes.Id">Delete</a></td>
+            </tr>
+        }
+
+    </tbody>
+</table>
