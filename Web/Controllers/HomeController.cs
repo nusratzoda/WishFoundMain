@@ -11,12 +11,13 @@ public class HomeController : Controller
     private readonly ILogger<HomeController> _logger;
     private readonly ICategoryService _categoryService;
     private readonly ICausesServices _causesServices;
-
-    public HomeController(ILogger<HomeController> logger, ICategoryService categoryService,ICausesServices causesServices)
+    private readonly IContactService _contactServices;
+    public HomeController(ILogger<HomeController> logger, ICategoryService categoryService,ICausesServices causesServices,IContactService contactServices)
     {
         _logger = logger;
         _categoryService = categoryService;
         _causesServices = causesServices;
+        _contactServices=contactServices;
     }
 
     public async Task<IActionResult> Index()
@@ -40,7 +41,12 @@ public class HomeController : Controller
 
         return View(causes);
     }
+    public async Task<IActionResult> Contact()
+    {
+        var causes = await _contactServices.GetContacts();
 
+        return View(causes);
+    }
 
     public async Task<IActionResult> Privacy()
     {

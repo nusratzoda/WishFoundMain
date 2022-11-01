@@ -13,7 +13,7 @@ public class CausesServices : ICausesServices
     {
         _context = context;
     }
-    public async Task<GetCausesDto> AddCauses(AddCausesDto causes)
+    public async Task<AddCausesDto> AddCauses(AddCausesDto causes)
     {
         var Causes = new Causes()
         {
@@ -25,15 +25,8 @@ public class CausesServices : ICausesServices
         };
         await _context.Causes.AddAsync(Causes);
         await _context.SaveChangesAsync();
-        return new GetCausesDto()
-        {
-            Id = Causes.Id,
-            Header = Causes.Header,
-            Image = Causes.Image,
-            Explanation = Causes.Explanation,
-            Raised = Causes.Raised,
-            Goal = Causes.Goal,
-        };
+        return causes;
+    
     }
 
     public async Task<bool> DeleteCauses(int id)
